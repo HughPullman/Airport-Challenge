@@ -34,3 +34,29 @@ cleanUp();
 
 //------------------------------------------------------------------
 
+//User story 2
+
+console.log('Test 2');
+console.log("==================");
+console.log("Function changed capacity to value given.");
+console.log("==================");
+
+//Arrange
+let newCapacity = 7;
+expected = newCapacity;
+
+//Act
+airport.setCapacity(newCapacity);
+actual = airport.capacity;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
