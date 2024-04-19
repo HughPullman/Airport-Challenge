@@ -60,3 +60,27 @@ cleanUp();
 
 //------------------------------------------------------------------
 
+console.log('Test 3');
+console.log("==================");
+console.log("Capacity cannot be set bellow 0");
+console.log("==================");
+
+//Arrange
+newCapacity = -7;
+expected = airport.capacity;
+
+//Act
+airport.setCapacity(newCapacity);
+actual = airport.capacity;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
