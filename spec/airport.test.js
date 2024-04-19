@@ -84,3 +84,26 @@ cleanUp();
 
 //------------------------------------------------------------------
 
+console.log('Test 4');
+console.log("==================");
+console.log("New capacity input has to be an integer");
+console.log("==================");
+
+//Arrange
+newCapacity = null;
+expected = airport.capacity;
+
+//Act
+airport.setCapacity(newCapacity);
+actual = airport.capacity;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------

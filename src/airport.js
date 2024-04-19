@@ -4,7 +4,10 @@ const airport = {
         return this.capacity;
     },
     setCapacity(newCapacity) {
-        newCapacity >= 0 ? this.capacity = newCapacity: ''
+        if (typeof newCapacity === 'number') {
+            newCapacity >= 0 ? this.capacity = newCapacity: ''
+        }
+        
     }
 }
 
