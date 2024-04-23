@@ -14,7 +14,13 @@ const airport = {
         return this.airportPlanes.length >= this.capacity;
     },
     addPlane(plane) {
+        if (plane === null) {
+            return
+        }
         !this.isFull() ? this.airportPlanes.push(plane): ''
+    },
+    checkPlane(plane) {
+        return this.airportPlanes.includes(plane)
     }
 }
 

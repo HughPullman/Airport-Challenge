@@ -231,3 +231,48 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 10');
+console.log("==================");
+console.log("add plane cannot take a null input");
+console.log("==================");
+
+//Arrange
+expected = airport.airportPlanes.length;
+//Act
+airport.addPlane(null)
+actual = airport.airportPlanes.length;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
+console.log('Test 11');
+console.log("==================");
+console.log("checkPlane returns true if the plane is at the airport");
+console.log("==================");
+
+//Arrange
+expected = true;
+
+//Act
+airport.addPlane("Test Plane");
+actual = airport.checkPlane("Test Plane");
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
