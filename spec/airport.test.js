@@ -346,3 +346,27 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 15');
+console.log("==================");
+console.log("the plane passed to removePlane is no longer in airportPlanes");
+console.log("==================");
+
+//Arrange
+airport.addPlane("Test Plane");
+expected = false;
+
+//Act
+airport.removePlane("Test Plane");
+actual = airport.airportPlanes.includes("Test Plane");
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
