@@ -13,6 +13,9 @@ const airport = {
     isFull() {
         return this.airportPlanes.length >= this.capacity;
     },
+    addPlane(plane) {
+        this.airportPlanes.push(plane);
+    }
 }
 
 export default airport

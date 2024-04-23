@@ -129,3 +129,35 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 6');
+console.log("==================");
+console.log("isFull returns true if the airport is full");
+console.log("==================");
+
+//Arrange
+expected = true;
+
+//Act
+airport.addPlane(1)
+airport.addPlane(2)
+airport.addPlane(3)
+airport.addPlane(4)
+airport.addPlane(5)
+airport.addPlane(6)
+airport.addPlane(7)
+airport.addPlane(8)
+airport.addPlane(9)
+airport.addPlane(10)
+actual = airport.isFull();
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
