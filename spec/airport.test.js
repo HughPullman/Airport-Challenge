@@ -276,3 +276,25 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 12');
+console.log("==================");
+console.log("checkPlane returns false if the plane is not at the airport");
+console.log("==================");
+
+//Arrange
+expected = false;
+
+//Act
+actual = airport.checkPlane("Test Plane");
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
