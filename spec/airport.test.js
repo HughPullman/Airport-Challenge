@@ -208,3 +208,26 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 9');
+console.log("==================");
+console.log("The plane passed to addPlane is in the array after running");
+console.log("==================");
+
+//Arrange
+expected = true;
+let testPlane = "Test Plane"
+//Act
+airport.addPlane(testPlane)
+actual = airport.airportPlanes.includes(testPlane);
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
