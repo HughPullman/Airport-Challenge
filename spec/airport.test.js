@@ -161,3 +161,26 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 7');
+console.log("==================");
+console.log("addPlane increases airportPlanes length by 1");
+console.log("==================");
+
+//Arrange
+expected = airport.airportPlanes.length + 1;
+
+//Act
+airport.addPlane("Test Plane")
+actual = airport.airportPlanes.length;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
