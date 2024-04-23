@@ -14,7 +14,7 @@ const airport = {
         return this.airportPlanes.length >= this.capacity;
     },
     addPlane(plane) {
-        this.airportPlanes.push(plane);
+        !this.isFull ? this.airportPlanes.push(plane): ''
     }
 }
 

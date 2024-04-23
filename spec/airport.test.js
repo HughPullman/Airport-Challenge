@@ -7,6 +7,7 @@ const cleanUp = () => {
     expected = undefined;
     actual = undefined;
     result = undefined;
+    airport.airportPlanes = [];
 }
 
 
@@ -170,6 +171,29 @@ console.log("==================");
 //Arrange
 expected = airport.airportPlanes.length + 1;
 
+//Act
+airport.addPlane("Test Plane")
+actual = airport.airportPlanes.length;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
+console.log('Test 8');
+console.log("==================");
+console.log("addPlane doesn't increase length if there is not capacity");
+console.log("==================");
+
+//Arrange
+expected = airport.airportPlanes.length;
+airport.setCapacity(0);
 //Act
 airport.addPlane("Test Plane")
 actual = airport.airportPlanes.length;
