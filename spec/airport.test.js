@@ -298,3 +298,27 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 13');
+console.log("==================");
+console.log("a plane cannot be added if it is already at the airport");
+console.log("==================");
+
+//Arrange
+airport.addPlane("Test Plane")
+expected = airport.airportPlanes.length;
+
+//Act
+airport.addPlane("Test Plane");
+actual = airport.airportPlanes.length;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
