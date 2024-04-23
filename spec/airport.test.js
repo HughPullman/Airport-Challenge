@@ -322,3 +322,27 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 14');
+console.log("==================");
+console.log("removePlane decreases the array length by 1");
+console.log("==================");
+
+//Arrange
+airport.addPlane("Test Plane");
+expected = airport.airportPlanes.length - 1;
+
+//Act
+airport.removePlane("Test Plane");
+actual = airport.airportPlanes.length;
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------

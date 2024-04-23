@@ -21,6 +21,9 @@ const airport = {
     },
     checkPlane(plane) {
         return this.airportPlanes.includes(plane)
+    },
+    removePlane(plane) {
+        this.airportPlanes = this.airportPlanes.filter(planes => planes !== plane);
     }
 }
 
