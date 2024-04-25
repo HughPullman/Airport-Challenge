@@ -8,6 +8,7 @@ const airport = {
         if (typeof newCapacity === 'number') {
             newCapacity >= 0 ? this.capacity = newCapacity: ''
         }
+        return `Capacity is now ${this.capacity}`
         
     },
     isFull() {
