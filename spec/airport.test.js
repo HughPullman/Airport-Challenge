@@ -394,3 +394,122 @@ console.log('\n\n');
 cleanUp();
 
 //------------------------------------------------------------------
+
+console.log('Test 17');
+console.log("==================");
+console.log("checkWeather returns true if its clear");
+console.log("==================");
+
+//Arrange
+expected = true;
+
+//Act
+actual = airport.checkWeather();
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
+console.log('Test 18');
+console.log("==================");
+console.log("setWeather changes weather to input");
+console.log("==================");
+
+//Arrange
+
+expected = false;
+
+//Act
+airport.setWeather(false);
+actual = airport.checkWeather();
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
+console.log('Test 19');
+console.log("==================");
+console.log("setWeather can only be set to a Boolean");
+console.log("==================");
+
+//Arrange
+expected = airport.weather;
+
+
+//Act
+airport.setWeather(5)
+actual = airport.checkWeather();
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
+console.log('Test 20');
+console.log("==================");
+console.log("plane cannot be instructed to land if weather is false");
+console.log("==================");
+
+//Arrange
+airport.setWeather(false);
+expected = "testPlane cannot land at this time";
+
+//Act
+actual = airport.addPlane("testPlane");
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+
+console.log('Test 21');
+console.log("==================");
+console.log("plane cannot be instructed to take off if weather is false");
+console.log("==================");
+
+//Arrange
+airport.setWeather(true);
+airport.addPlane("testPlane");
+airport.setWeather(false);
+expected = "testPlane cannot take off at this time";
+
+//Act
+actual = airport.removePlane("testPlane");
+
+//Assert
+result = assertEqual(actual, expected);
+
+//Result
+console.log(result ? 'Pass' : 'Fail');
+!result && console.log(`Actual: ${actual}, Expected: ${expected}`);
+console.log('\n\n');
+cleanUp();
+
+//------------------------------------------------------------------
+

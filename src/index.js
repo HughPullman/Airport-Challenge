@@ -33,3 +33,29 @@ console.log("\nInstruct Plane to take off");
 console.log(airport.removePlane("British Airways 1"));
 console.log(`Planes at airport: ${airport.airportPlanes}`);
 
+console.log("\n=======================================");
+
+console.log("\nSet random weather");
+console.log("Randomizing...");
+
+let randomValue = Math.random();
+let weather, newWeather;
+if (randomValue < 0.5) {
+    newWeather = false;
+    weather = "Stormy"
+} else {
+    newWeather = true;
+    weather = "Clear"
+}
+console.log(`Weather is ${weather} today, setting weather...`);
+airport.setWeather(newWeather);
+
+console.log("\n=======================================");
+
+console.log("\nAttempt to land plane");
+console.log(airport.addPlane("RyanAir 4"));
+
+console.log("\n=======================================");
+
+console.log("\nAttempt to take off plane");
+console.log(airport.removePlane("RyanAir 3"));
