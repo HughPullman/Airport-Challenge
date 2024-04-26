@@ -16,15 +16,24 @@ const airport = {
     },
     addPlane(plane) {
         if (plane === null || this.checkPlane(plane)) {
-            return
+            return 
         }
-        !this.isFull() ? this.airportPlanes.push(plane): ''
+        if (!this.isFull()) {
+            this.airportPlanes.push(plane);
+            return `${plane} is ok to land`
+        }
     },
     checkPlane(plane) {
         return this.airportPlanes.includes(plane)
     },
     removePlane(plane) {
-        this.airportPlanes = this.airportPlanes.filter(planes => planes !== plane);
+        if (this.checkPlane(plane)) {
+            this.airportPlanes = this.airportPlanes.filter(planes => planes !== plane);
+            return `${plane} has been cleared for take off`
+        } else {
+            return "This plane is not at the airport"
+        }
+        
     }
 }
 
